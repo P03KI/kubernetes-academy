@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
   - name: container
-    image: suheri82/latest
+    image: suheri82/k8s:latest
     ports:
     - containerPort: 3001

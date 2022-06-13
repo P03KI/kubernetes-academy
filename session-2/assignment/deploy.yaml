@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: deploy1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pod
+  template:
+    metadata:
+      labels:
+        app: pod
+    spec:
+      containers:
+      - name: cont2
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+      - name: cont1
+        image: suheri82/k8s:latest
+        ports:
+        - containerPort: 3001
